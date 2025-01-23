@@ -178,7 +178,7 @@ What do these fields mean? Here are some basic descriptions:
 
 ### Step 3: Starting the Dev Container
 (A) Open up **Command Palette (Ctrl+Shift+P, Shift+Cmd+P)** and search for `Dev Containers: Reopen in Container`<br>
-(B) After running the above operations, you should see some changes to your workspace. Parts of your terminal should be highlighted, and in the bottom left of your workspace, there should be a light-blue highlight showing that you're in a dev container. 
+(B) After running the above operations, you should see some changes to your workspace. Parts of your terminal should be highlighted, and in the bottom left of your workspace, there should be a light-blue highlight showing that you're in a dev container
 
 Congratulations for making it this far! You're almost done!
 
@@ -205,7 +205,7 @@ Great job so far for understanding this tutorial! Just a couple more steps left!
 * `println!()`: The function to print stuff onto the console for Rust
 * `Hello, world!`: The initialized string literal that's created when running the previous command
 
-Let's change the `Hello, world!` string to `Hello COMP423` to fit our course!
+Let's change the `Hello, world!` string to `Hello COMP423!` to fit our course!
 
 
 (C) What we want to do now is to compile that `main.rs` executable. To start, let's maneuver into our created project:

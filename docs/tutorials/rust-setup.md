@@ -6,10 +6,10 @@
 ## Prerequisites
 
 Before continuing, make sure you have the following:<br><br>
-1. A **GitHub Account**: If you don't have one, [sign up here](https://github.com)<br>
-2. **Git Installed**: If not installed, [click here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)<br>
-3. **Visual Studio Code (VS Code)**: The code editor we're going to use, install it [right here](https://code.visualstudio.com/)<br>
-4. **Docker**: The development container to be used, [install it here](https://www.docker.com/products/docker-desktop)
+1. A **GitHub Account**: If you don't have one, [sign up here](https://github.com){:target="_blank"}<br>
+2. **Git Installed**: If not installed, [click here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){:target="_blank"}<br>
+3. **Visual Studio Code (VS Code)**: The code editor we're going to use, install it [right here](https://code.visualstudio.com/){:target="_blank"}<br>
+4. **Docker**: The development container to be used, [install it here](https://www.docker.com/products/docker-desktop){:target="_blank"}
 
 ## Part 1: Setting up Git and GitHub Project
 
@@ -24,6 +24,7 @@ Before continuing, make sure you have the following:<br><br>
 
 ``` bash
 mkdir rust-tutorial
+cd rust-tutorial
 
 ```
 
@@ -43,7 +44,7 @@ git commit -m "Initial commit with README"
 
 ### Step 2: Creating your Remote Repository on GitHub
 
-(A) Log in to your GitHub account and navigate to the [Create a New Repository](https://github.com/new) page.<br>
+(A) Log in to your GitHub account and navigate to the [Create a New Repository](https://github.com/new){:target="_blank"} page.<br>
 (B) Fill in the details accordingly below:<br>
 
 * **Repository Name:** `rust-tutorial`
@@ -82,7 +83,7 @@ git push --set-upstream origin main
 
 Per this tutorial, you're going to be installing **Rust**. You might be asking, why Rust? Rust is a flexible language with the benefits of memory safety at compile time, even without a garbage collection. Not only is it fast as C or C++, it also provides high-level code without sacrificing the benefits of low-level control over system resources. That's partly what makes Rust such a great language.
 
-(A) Go to their website [here](https://www.rust-lang.org/tools/install)
+(A) Go to their website [here](https://www.rust-lang.org/tools/install){:target="_blank"}
 
 * Install your bit version, whether it be 32 or 64
 
@@ -95,9 +96,9 @@ Per this tutorial, you're going to be installing **Rust**. You might be asking, 
 * Type **1**, then hit **Enter**
 * If asked to allow changes, hit **Allow**
 
-!!! note "For Mac users"
+!!! note "**READ THIS BEFORE CONTINUING!**"
 
-    Skip (C), (D), (E), and (F)!
+    If you are on a Mac, or have already installed Visual Studio 2022 (different from VS Code), you can skip (C) and (D)
 
 (C) After completing previous steps, a **Visual Studio Installer** application will pop up
 
@@ -105,19 +106,19 @@ Per this tutorial, you're going to be installing **Rust**. You might be asking, 
 
 (D) After installation, you're prompted with installation for **C++ Build Tools** and **Windows 11 SDK**
 
-* Check and **install both** of them
+* **Uncheck both of them**, and proceed to install:
 
 !!! note "A heads up"
 
-    Make sure you have enough storage beforehand, as this installation could get hefty!
+    This installation is pretty significant, so make sure your system has enough space!
 
-(E) After the big installation, go back to the command prompt, and type **1** and hit **Enter**
+(E) After the installation, go back to the command prompt, and type **1** and hit **Enter**
 
 * After completing these steps, you should see multiple essential components of Rust being installed
 
 (F) Hit **Enter** to close command prompt after installing
 
-(E) Before moving on, reopen command prompt, and enter: 
+(G) Before moving on, reopen command prompt, and enter: 
 
 ``` bash
 rustc --version
@@ -132,7 +133,7 @@ Congratulations!
 ### Step 1: Setting up Extension
 
 (A) Go to **Extensions** tab on VS Code **(Ctrl+Shift+X) on Windows** or **(Shift+Cmd+X) on Mac**<br>
-(B) Search for **`rust-analyzer`** published by **The Rust Programming Language** and [install it](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+(B) Search for **`rust-analyzer`** published by **The Rust Programming Language** and [install it](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer){:target="_blank"}
 
 ### What is a Development (Dev) Container?
 

@@ -79,60 +79,9 @@ git push --set-upstream origin main
 
 (D) In your web browser, refresh your GitHub repository to see the same commit you've made locally has now been _pushed_ to remote. You can also use `git log` locally in VS Code to see the commit ID and message, which should match the ID of the most recent commit on your repository.
 
-## Part 2: Installing Rust
+## Part 2: Installing Rust & Configuring Dev Container
 
 Per this tutorial, you're going to be installing **Rust**. You might be asking, why Rust? Rust is a flexible language with the benefits of memory safety at compile time, even without a garbage collection. Not only is it fast as C or C++, it also provides high-level code without sacrificing the benefits of low-level control over system resources. That's partly what makes Rust such a great language.
-
-(A) Go to their website [here](https://www.rust-lang.org/tools/install){:target="\_blank"}
-
-- Install your bit version, whether it be 32 or 64
-
-!!! note "If you're on an OS other than windows"
-
-    Proceed to install Rust using the terminal command listed on the installation site!
-
-(B) Once installed, a new instance of command prompt will be shown with some text
-
-- Type **1**, then hit **Enter**
-- If asked to allow changes, hit **Allow**
-
-!!! note "**READ THIS BEFORE CONTINUING!**"
-
-    If you are on a Mac, or have already installed Visual Studio 2022 (different from VS Code), you can skip (C) and (D)
-
-(C) After completing previous steps, a **Visual Studio Installer** application will pop up
-
-- Hit **Continue**
-
-(D) After installation, you're prompted with installation for **C++ Build Tools** and **Windows 11 SDK**
-
-- **Uncheck both of them**, and proceed to install:
-
-!!! note "A heads up"
-
-    This installation is pretty significant, so make sure your system has enough space!
-
-(E) After the installation, go back to the command prompt, and type **1** and hit **Enter**
-
-- After completing these steps, you should see multiple essential components of Rust being installed
-
-(F) Hit **Enter** to close command prompt after installing
-
-(G) Before moving on, reopen command prompt, and enter:
-
-```bash
-rustc --version
-```
-
-This should show your current version of Rust, which then means you installed Rust correctly!
-Congratulations!
-
-## Part 3: Creating a new Dev Container in Rust
-
-### Step 1: Setting up Extension
-
-(A) Go to **Extensions** tab on VS Code **(Ctrl+Shift+X) on Windows** or **(Shift+Cmd+X) on Mac**<br>
-(B) Search for **`rust-analyzer`** published by **The Rust Programming Language** and [install it](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer){:target="\_blank"}
 
 ### What is a Development (Dev) Container?
 
@@ -140,7 +89,7 @@ A dev container is a premade development environment that makes programming cons
 are determined by the configuration files we're about to create. Think of it as a virtual machine (VM) or a smaller computer running
 inside your own computer.
 
-### Step 2: Configuring Dev Container
+### Step 1: Configuring Dev Container
 
 (A) There are many ways to create this essential part to a dev container. Let's do it in the terminal. Make sure you're in your **project folder**, and run in the terminal:
 
@@ -187,29 +136,35 @@ What do these fields mean? Here are some basic descriptions:
 - `image`: The Docker image you use, which in this case is the latest version of a Rust environment
 - `customizations`: Adds useful configurations to VS Code, like the Rust extension you installed earlier. In the VS Code extensions marketplace, you can find these customizations with a keyword. Having this field in this configuration makes sure other developers have these extensions installed in their containers automatically.
 
-### Step 3: Starting the Dev Container
+### Step 2: Starting the Dev Container
 
 (A) Open up **Command Palette (Ctrl+Shift+P, Shift+Cmd+P)** and search for `Dev Containers: Reopen in Container`<br>
 (B) After running the above operations, you should see some changes to your workspace. Parts of your terminal should be highlighted, and in the bottom left of your workspace, there should be a light-blue highlight showing that you're in a dev container
 
+To ensure your dev container is working properly, enter this in your terminal:
+```bash
+rustc --version
+```
+This will show you that you've got Rust configured in your dev container, and secondly, show the current (latest) version of Rust!
+
 Congratulations for making it this far! You're almost done!
 
-## Part 4: Creating your first Rust program!
+## Part 3: Creating your first Rust program!
 
 Remember the components of Rust we've installed earlier? One useful one is **Cargo**, the official **package manager and build system** of Rust projects, dependencies, and builds. It's like the `pip` for Python, `npm` for Node.js and `make` for C/C++.
 
 (A) Let's create a new project within our workspace. Make sure you're in the **/rust-tutorial** directory. If not, `cd` into that directory. Run the following command in the terminal:
 
 ```
-cargo new my_project --bin --vcs none
+cargo new hello_rust --vcs none
 ```
 
 !!! note "What do these commands do?"
 
     * `cargo`: The package manager and build system of Rust
     * `new`: Creates a new directory with necessary Rust project file, including `Cargo.toml` and `src` (You can check this in your own files)
-    * `my_project`: The name of your new project directory
-    * `--bin`: Specifies that the project should be **binary project**, basically producing an executable. This also generates the `main.rs` file under `src` with some starter code inside  `--vcs none`: This flag prevents Cargo from initializing a version control system, since we've already done that earlier in this tutorial
+    * `hello_rust`: The name of your new project directory
+    * `--vcs none`: Stops the creation of a new `git` repo, since we've already initialized one
 
 Great job so far for understanding this tutorial! Just a couple more steps left!
 
@@ -225,7 +180,7 @@ Let's change the `Hello, world!` string to `Hello COMP423!` to fit our course!
 (C) What we want to do now is to compile that `main.rs` executable. To start, let's maneuver into our created project:
 
 ```bash
-cd my_project
+cd hello_rust
 ```
 
 (D) Let's then run:
@@ -244,7 +199,7 @@ cargo build
 cargo run
 ```
 
-In your terminal, you should see "Hello COMP423!", meaning you've successfully executed the Rust file!
+In your terminal, you should see `Hello COMP423!`, meaning you've successfully executed the Rust file!
 
 !!! note "Difference between `build` and `run`"
 
@@ -253,3 +208,4 @@ In your terminal, you should see "Hello COMP423!", meaning you've successfully e
 ## Congrats, you've finished this Rust setup tutorial!
 
 - Tested on Mac OS
+- Tested on Windows OS

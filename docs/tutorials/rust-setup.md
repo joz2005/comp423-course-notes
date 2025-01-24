@@ -24,7 +24,7 @@ Before continuing, make sure you have the following:<br><br>
 
 ``` bash
 mkdir rust-tutorial
-
+cd rust-tutorial
 ```
 
 (C) Initialize a new Git repository using the command below:
@@ -117,7 +117,7 @@ Per this tutorial, you're going to be installing **Rust**. You might be asking, 
 
 (F) Hit **Enter** to close command prompt after installing
 
-(E) Before moving on, reopen command prompt, and enter: 
+(G) Before moving on, reopen command prompt, and enter: 
 
 ``` bash
 rustc --version

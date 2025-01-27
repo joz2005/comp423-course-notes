@@ -189,7 +189,7 @@ cd hello_rust
 cargo build
 ```
 
-!!! note "What does `cargo build` do?"
+!!! question "What does `cargo build` do?"
 
     For some much needed explanation, `cargo build` generates a compiled binary in the `target/debug` directory. It's very similar to `gcc`'s compiling system, where the command `gcc -c <your-file>.c` with the flag `-c` compiles a `.c` file into an `.o` object file.
 

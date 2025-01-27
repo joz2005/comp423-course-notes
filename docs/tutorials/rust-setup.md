@@ -20,6 +20,7 @@ Before continuing, make sure you have the following:<br><br>
 
 (A) Open your terminal or command prompt<br>
 (B) Create a new directory for your project
+
 !!! note "If you want to organize your project"
 
     If you want to organize this project in your own manner,
@@ -28,7 +29,6 @@ Before continuing, make sure you have the following:<br><br>
 ```bash
 mkdir rust-tutorial
 cd rust-tutorial
-
 ```
 
 (C) Initialize a new Git repository using the command below:
@@ -69,31 +69,29 @@ Enter your GitHub username as a replacement for `<your-username>`
 
 (B) Check your default branch name with the subcommand `git branch`. If it's not `main`, rename it to `main` using the command, `git branch -M main`. It's often standard to have the default primary branch name to be `main`, so let's uphold this standard.<br>
 
-(C) Push local commits to the GitHub repository:
+(C) Push the local commits to the GitHub repository:
 
 ```bash
 git push --set-upstream origin main
 ```
 
-!!! note "What is `--set-upstream`?"
+!!! question "What is `--set-upstream`?"
 
-    `--set-upstream` is a special flag that pushes newly **untracked** branches onto the remote repository origin. Because branches are highly efficient and useful within workflows, it's important understand how a programmer can fully utilize this feature of git. This flag has a short form, `-u`.
+    `--set-upstream` is a special flag that pushes newly **untracked** branches onto the remote repository origin. Because utilizing branches is highly efficient and useful within workflows, it's important to understand how a programmer can fully utilize this git feature. This flag has a short form, `-u`.
 
 (D) In your web browser, refresh your GitHub repository to see the same commit you've made locally has now been _pushed_ to remote. You can also use `git log` locally in VS Code to see the commit ID and message, which should match the ID of the most recent commit on your repository.
 
 ## Part 2: Installing Rust & Configuring Dev Container
 
-Per this tutorial, you're going to be installing **Rust**. You might be asking, why Rust? Rust is a flexible language with the benefits of memory safety at compile time, even without a garbage collection. Not only is it fast as C or C++, it also provides high-level code without sacrificing the benefits of low-level control over system resources. That's partly what makes Rust such a great language.
+Per this tutorial, you're going to be installing **Rust**. You might be asking, why Rust? Rust is a flexible language with the benefits of memory safety at compile time, even without a garbage collection. Not only is it fast as C and C++, it also provides high-level code without sacrificing the benefits of low-level control over system resources. That's partially what makes Rust such a great language.
 
 ### What is a Development (Dev) Container?
 
-A dev container is a premade development environment that makes programming consistent between multiple machines. These environments
-are determined by the configuration files we're about to create. Think of it as a virtual machine (VM) or a smaller computer running
-inside your own computer.
+A dev container is a premade development environment that makes programming consistent between multiple machines. These environments are determined by the **configuration files** we're about to create. Think of it as a virtual machine (VM) or a smaller computer running inside your own computer.
 
 ### Step 1: Configuring Dev Container
 
-(A) There are many ways to create this essential part to a dev container. Let's do it in the terminal. Make sure you're in your **project folder**, and run in the terminal:
+(A) There are many ways to create this **configuration file** that is essential to a dev container. Let's do it in the terminal. Make sure you're in your **project folder**, and run in the terminal:
 
 ```bash
 mkdir .devcontainer
@@ -104,7 +102,7 @@ mkdir .devcontainer
 cd .devcontainer
 ```
 
-(C) You should see your **local directory in your terminal change**, as you've relocated into .devcontainer. Let's create the dev container configuration file by running this command in the bash terminal:
+(C) You should see your **local directory in your terminal change**. As you've relocated into .devcontainer, let's create the dev container configuration file by running this command in the bash terminal:
 
 ```bash
 touch devcontainer.json
@@ -119,7 +117,7 @@ echo > devcontainer.json
 (D) You should've created a **.json** file. Let's edit it manually -
 copy and paste the below code into the file:
 
-```json
+```json title="devcontainer.json"
 {
   "name": "Rust Tutorial",
   "image": "mcr.microsoft.com/devcontainers/rust:latest",
@@ -157,7 +155,7 @@ Remember the components of Rust we've installed earlier? One useful one is **Car
 
 (A) Let's create a new project within our workspace. Make sure you're in the **/rust-tutorial** directory. If not, `cd` into that directory. Run the following command in the terminal:
 
-```
+```bash
 cargo new hello_rust --vcs none
 ```
 
